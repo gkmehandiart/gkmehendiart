@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@theme {
+  /* Premium Colors */
+  --color-gold: #D4A017;
+  --color-gold-dark: #B8860B;
+  --color-cream: #FFF8F0;
+  --color-cream-soft: #F5E6C8;
+  --color-dark: #1A0F0A;
+  --color-green-dark: #1B4D3E;
+
+  /* Fonts - Three-Tier System */
+  --font-display: var(--font-display), 'Great Vibes', cursive;
+  --font-heading: var(--font-heading), 'Playfair Display', serif;
+  --font-body: var(--font-body), 'Montserrat', sans-serif;
+
+  /* Animations */
+  --animate-fade-in: fadeIn 0.5s ease-out;
+  --animate-slide-up: slideUp 0.5s ease-out;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+/* Nav offset: announcement bar (~33px) + main navbar (~56px scrolled state) */
+:root {
+  --nav-total-height: 89px;
+  scroll-behavior: smooth;
+}
+
+/* Prevent horizontal overflow on all pages */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Base Styles */
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Text selection */
+::selection {
+  background-color: rgba(212, 160, 23, 0.25);
+  color: #1A0F0A;
+}
+
+/* Main Headings use Great Vibes */
+h1 {
+  font-family: var(--font-display);
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+/* Sub-headings use Playfair Display */
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  letter-spacing: 1px;
+}
+
+button {
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+/* Custom Utilities */
+@utility text-shadow {
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+@utility glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@utility bg-radial-vignette {
+  background: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-dark);
+}
