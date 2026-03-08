@@ -66,7 +66,7 @@ const AboutPreview: React.FC = () => {
                             <div className="relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-2xl border border-white/10">
                                 <Image
                                     src="/kalai.webp"
-                                    alt="Kalai – GK Mehendi Artist"
+                                    alt="Kalai — Professional bridal mehendi artist at GK Mehendi Art, Chennai"
                                     fill
                                     className="object-cover object-top hover:scale-105 transition-transform duration-700"
                                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 40vw"
@@ -131,12 +131,11 @@ const AboutPreview: React.FC = () => {
                                 className="space-y-4"
                             >
                                 <p className="text-lg text-cream/80 font-body leading-relaxed">
-                                    Hi, I&apos;m{' '}
-                                    <span className="text-gold font-semibold italic">Kalai</span>.
-                                    I believe Mehendi is not just a pattern — it&apos;s a celebration of tradition, love, and personal storytelling.
+                                    GK Mehendi Art is a trusted name in professional mehendi services across India. With years of experience and a passion for henna artistry, we specialize in creating breathtaking{' '}
+                                    <span className="text-gold font-semibold">bridal mehendi</span>, elegant Arabic designs, and custom henna patterns for every occasion.
                                 </p>
                                 <p className="text-base text-cream/55 font-body leading-relaxed">
-                                    Specializing in bridal and intricate traditional designs, I use only handcrafted, 100% organic, and chemical-free henna. Every stroke is applied with meticulous precision to ensure your special day is marked with beauty that lasts.
+                                    Every design tells a story — from the intricate details of a bride&apos;s wedding mehendi to the joyful patterns adorning hands during festivals and celebrations. We use premium-quality, natural henna to ensure rich colour and safe application every time. Whether you are planning a grand wedding, an intimate engagement, or a festive gathering, GK Mehendi Art delivers designs that leave a lasting impression.
                                 </p>
                             </motion.div>
 

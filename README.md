@@ -1,163 +1,165 @@
-# GK Mehendi Art Booking Platform
+# GK Mehendi Art
 
-Production-style booking platform for GK Mehendi Art with a marketing website, 5-step customer booking flow, booking status tracking, and an authenticated admin dashboard.
+Production website for **GK Mehendi Art** — a premium bridal mehendi studio in Chennai, India.
 
-## Current Architecture
+**Live:** [gkmehendiart.in](https://gkmehendiart.in)
 
-- Frontend: Next.js 16 (App Router), React 19, Tailwind CSS 4, Framer Motion
-- Backend: Express 4 REST API
-- Data and auth: Supabase Postgres + Supabase Auth
-- Admin authentication flow:
-  - Frontend signs in with Supabase Auth (`signInWithPassword`)
-  - Frontend sends Supabase access token as `Authorization: Bearer ...`
-  - Backend verifies token using Supabase and authorizes admin routes
+---
 
-## Repository Structure
+## Tech Stack
 
-```text
-Mehandi Website/
-  backend/
-    config/
-    database/
-      schema.sql
-    middleware/
-    routes/
-      bookings.js
-      admin.js
-    server.js
-  frontend/
-    app/
-    components/
-    contexts/
-    hooks/
-    lib/
-    public/
-  README.md
-  QUICKSTART.md
-  DEPLOYMENT.md
-  PROJECT_SUMMARY.md
-```
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript 5 (strict mode) |
+| UI | React 19 |
+| Styling | Tailwind CSS v4 |
+| Animations | Framer Motion 12 |
+| Fonts | Google Fonts (Great Vibes, Playfair Display, Montserrat) |
+| Deployment | Vercel (Edge Network) |
 
-## Product Features
+---
 
-- Marketing pages: Home, About, Services, Gallery, Contact
-- Booking flow:
-  1. Service selection
-  2. Date selection
-  3. Time slot selection
-  4. Client details
-  5. Confirmation
-- Secure booking tracking page (`/booking/status`) using booking reference + phone number
-- Admin dashboard for:
-  - Dashboard stats
-  - Booking management and status updates
-  - Availability settings
-  - Blocked dates
-  - Monthly report endpoint
+## Pages
 
-## API Overview
+| Route | Description |
+|---|---|
+| `/` | Home — hero slideshow, services preview, gallery preview, testimonials, FAQ |
+| `/about` | About the artist — story, credentials, specializations |
+| `/services` | Service packages with WhatsApp booking |
+| `/gallery` | Full portfolio with lightbox viewer (39 images) |
+| `/contact` | Contact form with direct WhatsApp enquiry |
+| `/privacy` | Privacy policy |
+| `/terms` | Terms and conditions |
 
-Base URL (local): `http://localhost:5000`
+---
 
-Public routes:
-- `GET /api/health`
-- `GET /api/bookings/services`
-- `GET /api/bookings/availability/:date`
-- `GET /api/bookings/calendar/:year/:month`
-- `POST /api/bookings/bookings`
-- `GET /api/bookings/bookings/:id`
-- `POST /api/bookings/status/lookup`
+## Architecture
 
-Admin routes (require Supabase Bearer token):
-- `GET /api/admin/dashboard/stats`
-- `GET /api/admin/bookings`
-- `PATCH /api/admin/bookings/:id/status`
-- `PATCH /api/admin/bookings/:id/notes`
-- `DELETE /api/admin/bookings/:id`
-- `DELETE /api/admin/bookings?confirm=true[&status=...]`
-- `GET /api/admin/availability-settings`
-- `PUT /api/admin/availability-settings/:day`
-- `GET /api/admin/blocked-dates`
-- `POST /api/admin/blocked-dates`
-- `DELETE /api/admin/blocked-dates/:date`
-- `GET /api/admin/reports/monthly/:year/:month`
-- `POST /api/admin/maintenance/release-expired`
+This project was developed as a Next.js 16 Static Website utilizing the App router to create high-performance static pages. 
+The application interfaces directly with WhatsApp to allow users to make direct bookings rather than keeping state within a database.
+This limits complexity, removes the operational overhead of managing a database, and gives a direct conduit between the clients and the studio.
 
-## Environment Variables
+---
 
-Backend (`backend/.env`):
+## Features
 
-Required:
-- `SUPABASE_URL`
-- `SUPABASE_SERVICE_ROLE_KEY`
+- **WhatsApp Integration** — All booking buttons open WhatsApp with pre-filled messages
+- **SEO Optimized** — JSON-LD schemas (LocalBusiness, FAQPage, Service, BreadcrumbList), Open Graph, Twitter Cards, XML sitemap, canonical URLs
+- **Accessible** — WCAG 2.1 AA: skip navigation, focus traps, ARIA labels, keyboard nav, `prefers-reduced-motion` support
+- **Performance** — Static generation (SSG), optimized images (WebP + next/image), font subsetting, `requestAnimationFrame` scroll throttling
+- **Security** — CSP headers, HSTS, X-Frame-Options, `noopener`/`noreferrer` on external links, `poweredByHeader: false`
+- **Mobile-First** — Responsive design targeting Indian mobile-heavy traffic
 
-Common:
-- `PORT` (default `5000`)
-- `NODE_ENV` (`development` or `production`)
-- `FRONTEND_URL` (comma-separated allowed origins)
-- `WHATSAPP_PHONE`
-- `RATE_LIMIT_WINDOW_MS`
-- `RATE_LIMIT_MAX_REQUESTS`
-- `MAX_ADVANCE_BOOKING_DAYS`
-- `MIN_ADVANCE_HOURS`
-- `MIN_BRIDAL_ADVANCE_DAYS`
-- `BUFFER_MINUTES_BETWEEN_SLOTS`
+---
 
-Frontend (`frontend/.env.local`):
-- `NEXT_PUBLIC_API_URL` (example: `http://localhost:5000`)
-- `NEXT_PUBLIC_SUPABASE_URL`
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-- `NEXT_PUBLIC_WHATSAPP_PHONE`
-- `NEXT_PUBLIC_APP_NAME`
-- `NEXT_PUBLIC_APP_URL`
+## Getting Started
 
-## Local Development
+### Prerequisites
 
-Use the full guide in [QUICKSTART.md](./QUICKSTART.md).
+- Node.js 18+
+- npm
 
-Quick commands:
+### Install & Run
 
 ```bash
-# backend
-cd backend
-npm install
-npm run dev
-
-# frontend (new terminal)
 cd frontend
 npm install
 npm run dev
 ```
 
-- Frontend runs at `http://localhost:3000`
-- Backend runs at `http://localhost:5000`
+Open [http://localhost:3000](http://localhost:3000)
+
+### Environment Variables
+
+Create `.env.local` in the `frontend` directory:
+
+```env
+NEXT_PUBLIC_WHATSAPP_PHONE=916383927576
+NEXT_PUBLIC_APP_URL=https://gkmehendiart.in
+```
+
+> `.env.local` is gitignored. Set these variables in Vercel dashboard for production.
+
+---
 
 ## Scripts
 
-Backend (`backend/package.json`):
-- `npm run dev` - start API with nodemon
-- `npm start` - start API
-- `npm run db:setup` - reminder for schema setup in Supabase SQL editor
+```bash
+# In the `frontend` directory
+npm run dev       # Start development server
+npm run build     # Production build
+npm run start     # Serve production build locally
+npm run lint      # Run ESLint
+```
 
-Frontend (`frontend/package.json`):
-- `npm run dev` - start Next.js dev server
-- `npm run build` - production build
-- `npm run start` - run production server
-- `npm run lint` - ESLint check
-- `npm run convert:images` - convert selected assets to WebP
-- `npm run cleanup:images` - remove old image assets
+---
 
-## Documentation Index
+## Project Structure
 
-- [Quick Start](./QUICKSTART.md)
-- [Deployment Guide](./DEPLOYMENT.md)
-- [Project Summary](./PROJECT_SUMMARY.md)
-- [Codebase Review](./CODEBASE_REVIEW.md)
+```
+frontend/
+  app/
+    layout.tsx            # Root layout — fonts, metadata, JSON-LD, viewport
+    page.tsx              # Home page (12 sections)
+    about/                # About page
+    services/             # Services & packages
+    gallery/              # Gallery with lightbox
+    contact/              # Contact with WhatsApp form
+    privacy/              # Privacy policy
+    terms/                # Terms and conditions
+    sitemap.ts            # XML sitemap (7 routes)
+    opengraph-image.tsx   # Auto-generated OG image (1200x630)
+    error.tsx             # Error boundary
+    not-found.tsx         # Custom 404
 
-## Current Known Gaps
+  components/
+    LayoutShell.tsx       # Shell with skip nav, Navbar, Footer, WhatsApp button
+    Navbar.tsx            # Fixed navbar with scroll progress bar
+    Footer.tsx            # Footer with contact info, social links
+    Hero.tsx              # Image carousel with auto-advance
+    WhatsAppButton.tsx    # Floating WhatsApp CTA
+    ui/
+      SectionHeader.tsx   # Reusable section header component
+      StarRating.tsx      # Star rating display
 
-- `backend/package.json` references `scripts/createAdmin.js`, but that file is currently missing.
-- Lint and type-quality checks currently fail in several frontend files.
-- No automated test suite is currently configured.
+  lib/
+    constants.ts          # Shared phone number, URLs, WhatsApp helper
+    animations.ts         # Shared Framer Motion animation variants
+    navigation.ts         # Navigation link definitions
 
-See [CODEBASE_REVIEW.md](./CODEBASE_REVIEW.md) for prioritized details.
+  public/                 # Static assets
+    *.webp                # Portfolio images, hero backgrounds, product images
+    gkmehandi_logo.svg    # Brand logo
+    kalai.webp            # Artist portrait
+    robots.txt            # Robots directives
+```
+
+---
+
+## Accessibility
+
+- Skip navigation link for keyboard users
+- `prefers-reduced-motion` CSS support
+- Focus trap in gallery lightbox with focus restore
+- ARIA labels on all interactive elements
+- Form inputs with proper label associations
+- Color contrast minimum 4.5:1 (WCAG AA)
+- Semantic HTML landmarks (`main`, `nav`, `footer`)
+
+---
+
+## Deployment
+
+Deployed on **Vercel** via GitHub integration. Every push to `main` triggers an automatic production redeploy.
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for more info.
+
+---
+
+## Business Hours
+
+Mon–Sun: 9:00 AM – 9:00 PM IST
+
+---
+
+Built by [Siru AI Labs](https://siruailabs.com)

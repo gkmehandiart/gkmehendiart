@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
     FiCheck, FiClock, FiUsers, FiStar, FiTrendingUp,
     FiAward, FiShield, FiHeart, FiArrowRight,
@@ -16,7 +17,7 @@ const packages = [
     {
         title: 'Bridal Mehendi',
         subtitle: 'Basic Floral Package',
-        description: 'Beautiful bridal henna to make your special day unforgettable. Basic floral designs with organic henna.',
+        description: 'Your wedding day deserves mehendi as special as you. Elaborate full-hand and full-feet designs with intricate detailing, traditional motifs, and personalized elements using premium natural henna for deep, long-lasting colour.',
         price: '₹2,500',
         priceNote: 'Starting price · Travel charges extra · No customisation',
         icon: FaHeart,
@@ -38,7 +39,7 @@ const packages = [
     {
         title: 'Feet Mehendi',
         subtitle: 'Ankle Length Mandala',
-        description: 'Elegant mandala pattern feet mehendi for brides and special occasions.',
+        description: 'Elegant mandala pattern feet mehendi with ankle-length coverage. Beautifully crafted designs that complement your bridal mehendi and complete the wedding look.',
         price: '₹1,000',
         priceNote: 'Ankle length · Price varies by design',
         icon: FaGem,
@@ -60,7 +61,7 @@ const packages = [
     {
         title: 'Guest Mehendi',
         subtitle: 'Arabic & Mandala for Guests',
-        description: 'Quick and beautiful designs for guests at functions and celebrations.',
+        description: 'Bold, flowing Arabic and intricate mandala designs for wedding guests, family, and friends. Quick application with maximum impact for sangeet, engagement, and celebrations.',
         price: '₹100',
         priceNote: 'Arabic (two hands front) · Mandala from ₹300',
         icon: FaLeaf,
@@ -465,11 +466,20 @@ const ServicesClient: React.FC = () => {
                         </motion.p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
                         {/* Organic Henna Cones */}
-                        <motion.div {...fadeUp(0)} className="rounded-2xl border border-gold/20 bg-white/5 overflow-hidden hover:border-gold/40 transition-all duration-300">
-                            <div className="p-7 border-b border-gold/15">
+                        <motion.div {...fadeUp(0)} className="group rounded-2xl flex flex-col border border-gold/20 bg-white/5 overflow-hidden hover:border-gold/40 transition-all duration-300">
+                            <div className="relative w-full h-[260px] border-b border-gold/15 overflow-hidden">
+                                <Image
+                                    src="/organic-henna-cones.webp"
+                                    alt="Organic Henna Cones - Chemical-free, 100% natural mehendi cones"
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-all duration-500"
+                                    sizes="(max-width: 768px) 100vw, 25vw"
+                                />
+                            </div>
+                            <div className="p-7 flex-1 border-b border-gold/15">
                                 <div className="w-11 h-11 rounded-xl bg-gold/15 border border-gold/25 flex items-center justify-center text-gold text-lg mb-4">
                                     <FaLeaf />
                                 </div>
@@ -487,13 +497,22 @@ const ServicesClient: React.FC = () => {
                             </div>
                         </motion.div>
 
-                        {/* BAQ Stringy Henna Powder */}
-                        <motion.div {...fadeUp(0.1)} className="rounded-2xl border border-gold/20 bg-white/5 overflow-hidden hover:border-gold/40 transition-all duration-300">
-                            <div className="p-7 border-b border-gold/15">
+                        {/* Henna Powder */}
+                        <motion.div {...fadeUp(0.1)} className="group rounded-2xl flex flex-col border border-gold/20 bg-white/5 overflow-hidden hover:border-gold/40 transition-all duration-300">
+                            <div className="relative w-full h-[260px] border-b border-gold/15 overflow-hidden">
+                                <Image
+                                    src="/henna-powder.webp"
+                                    alt="Henna Powder - Premium natural henna powder for mehendi"
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-all duration-500"
+                                    sizes="(max-width: 768px) 100vw, 25vw"
+                                />
+                            </div>
+                            <div className="p-7 flex-1 border-b border-gold/15">
                                 <div className="w-11 h-11 rounded-xl bg-gold/15 border border-gold/25 flex items-center justify-center text-gold text-lg mb-4">
                                     <FaHeart />
                                 </div>
-                                <h3 className="text-xl font-heading font-bold text-white mb-1">BAQ Stringy Henna Powder</h3>
+                                <h3 className="text-xl font-heading font-bold text-white mb-1">Henna Powder</h3>
                                 <p className="text-cream/40 text-sm font-body">Body Art Quality · Premium grade</p>
                             </div>
                             <div className="p-7 space-y-3">
@@ -511,8 +530,17 @@ const ServicesClient: React.FC = () => {
                         </motion.div>
 
                         {/* Eucalyptus Oil */}
-                        <motion.div {...fadeUp(0.2)} className="rounded-2xl border border-gold/20 bg-white/5 overflow-hidden hover:border-gold/40 transition-all duration-300">
-                            <div className="p-7 border-b border-gold/15">
+                        <motion.div {...fadeUp(0.2)} className="group rounded-2xl flex flex-col border border-gold/20 bg-white/5 overflow-hidden hover:border-gold/40 transition-all duration-300">
+                            <div className="relative w-full h-[260px] border-b border-gold/15 overflow-hidden">
+                                <Image
+                                    src="/eucalyptus-oil-mehendi.webp"
+                                    alt="Eucalyptus Oil - Premium essential oil for deep mehendi stain"
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-all duration-500"
+                                    sizes="(max-width: 768px) 100vw, 25vw"
+                                />
+                            </div>
+                            <div className="p-7 flex-1 border-b border-gold/15">
                                 <div className="w-11 h-11 rounded-xl bg-gold/15 border border-gold/25 flex items-center justify-center text-gold text-lg mb-4">
                                     <FaGem />
                                 </div>
@@ -526,6 +554,42 @@ const ServicesClient: React.FC = () => {
                                     { qty: '200 ml', price: '₹450' },
                                     { qty: '100 ml', price: '₹250' },
                                     { qty: '50 ml', price: '₹150' },
+                                    { qty: '30 ml', price: '₹90' },
+                                ].map((item) => (
+                                    <div key={item.qty} className="flex items-center justify-between py-1.5 border-b border-white/5 last:border-0">
+                                        <span className="text-cream/60 text-sm font-body">{item.qty}</span>
+                                        <span className="text-gold font-bold text-sm font-body">{item.price}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </motion.div>
+
+                        {/* Tea Tree Oil */}
+
+                        <motion.div {...fadeUp(0.3)} className="group rounded-2xl flex flex-col border border-gold/20 bg-white/5 overflow-hidden hover:border-gold/40 transition-all duration-300">
+                            <div className="relative w-full h-[260px] border-b border-gold/15 overflow-hidden">
+                                <Image
+                                    src="/tea-tree-oil.webp"
+                                    alt="Tea Tree Oil - Natural essential oil for mehendi aftercare"
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-all duration-500"
+                                    sizes="(max-width: 768px) 100vw, 25vw"
+                                />
+                            </div>
+                            <div className="p-7 flex-1 border-b border-gold/15">
+                                <div className="w-11 h-11 rounded-xl bg-gold/15 border border-gold/25 flex items-center justify-center text-gold text-lg mb-4">
+                                    <FaLeaf />
+                                </div>
+                                <h3 className="text-xl font-heading font-bold text-white mb-1">Tea Tree Oil</h3>
+                                <p className="text-cream/40 text-sm font-body">100% pure · Natural mehendi aftercare</p>
+                            </div>
+                            <div className="p-7 space-y-2">
+                                {[
+                                    { qty: '1 litre', price: '₹2,500' },
+                                    { qty: '500 ml', price: '₹1,450' },
+                                    { qty: '200 ml', price: '₹680' },
+                                    { qty: '100 ml', price: '₹340' },
+                                    { qty: '50 ml', price: '₹170' },
                                     { qty: '30 ml', price: '₹90' },
                                 ].map((item) => (
                                     <div key={item.qty} className="flex items-center justify-between py-1.5 border-b border-white/5 last:border-0">

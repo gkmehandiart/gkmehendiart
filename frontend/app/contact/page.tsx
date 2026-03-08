@@ -4,8 +4,8 @@ import ContactClient from './ContactClient';
 const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://gkmehendiart.com';
 
 export const metadata: Metadata = {
-    title: 'Contact GK Mehendi Art | Book Bridal Mehendi in Chennai | Kalai',
-    description: "Contact Kalai at GK Mehendi Art to book your bridal mehendi session in Chennai. Reach us by phone or WhatsApp. Available 7 days a week, 9 AM–9 PM. Doorstep service across Chennai and Tamil Nadu.",
+    title: 'Book Your Mehendi Artist — Contact GK Mehendi Art Today',
+    description: "Book your bridal mehendi session with GK Mehendi Art in Chennai. Reach us by phone or WhatsApp. Available 7 days a week, 9 AM\u20139 PM. Doorstep service across Chennai, Tamil Nadu & India.",
     keywords: [
         'contact mehendi artist chennai',
         'book bridal mehendi chennai',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     creator: 'GK Mehendi Art',
     publisher: 'GK Mehendi Art',
     openGraph: {
-        title: 'Contact GK Mehendi Art | Book Bridal Mehendi in Chennai',
-        description: 'Connect with Kalai at GK Mehendi Art. Book bridal, Arabic & traditional henna. Available 7 days a week. Doorstep service across Chennai.',
+        title: 'Book Your Mehendi Artist — Contact GK Mehendi Art Today',
+        description: 'Book bridal, Arabic & traditional henna with GK Mehendi Art. Available 7 days a week. Doorstep service across Chennai & India.',
         url: `${siteUrl}/contact`,
         siteName: 'GK Mehendi Art',
         locale: 'en_IN',

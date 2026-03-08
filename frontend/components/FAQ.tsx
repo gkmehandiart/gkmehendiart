@@ -7,24 +7,24 @@ import Link from 'next/link';
 
 const faqs = [
     {
-        question: 'Is your mehendi safe for sensitive skin?',
-        answer: 'Absolutely! We use 100% organic henna made from premium Sojat leaves, mixed with essential oils like Eucalyptus and Tea Tree. No PPD, no chemicals, and no artificial colors — completely safe for all skin types.',
+        question: 'How far in advance should I book a bridal mehendi artist?',
+        answer: 'We recommend booking your bridal mehendi artist at least 2\u20134 weeks before your wedding date, especially during peak wedding season. Early booking ensures availability and gives us time to discuss your preferred designs and personalization. Contact GK Mehendi Art today to reserve your date.',
     },
     {
-        question: 'How long before my wedding should I get mehendi applied?',
-        answer: 'For the best stain result, we recommend applying mehendi 48 hours (2 days) before your main ceremony. This allows the stain to develop from orange to its deep mahogany peak, perfectly timed for your big day.',
+        question: 'What type of henna does GK Mehendi Art use?',
+        answer: 'We use 100% natural, chemical-free henna paste made from premium-quality henna powder. Our natural henna is safe for all skin types and produces a rich, deep maroon-to-brown stain that lasts 1\u20133 weeks depending on aftercare.',
     },
     {
-        question: 'How long does a bridal mehendi session take?',
-        answer: 'Depending on the complexity and coverage (elbow vs. full arm), a bridal session typically takes between 4 to 7 hours. We recommend a comfortable seating arrangement and light snacks during this time.',
+        question: 'How long does bridal mehendi take to apply?',
+        answer: 'A full bridal mehendi session \u2014 covering both hands (front and back) and feet \u2014 typically takes 3\u20135 hours depending on the complexity and level of detail. We recommend scheduling your bridal mehendi the evening before or the morning of your wedding for the best colour results.',
     },
     {
-        question: 'Do you travel to other cities for bookings?',
-        answer: 'We primarily serve Chennai and surrounding areas. However, for exclusive bridal bookings, we do travel to other cities in Tamil Nadu. Travel and accommodation charges apply — please contact us to discuss.',
+        question: 'Do you travel for destination weddings and events outside your city?',
+        answer: 'Yes! GK Mehendi Art is available for destination weddings and events across India. Travel arrangements and any additional charges will be discussed during the booking process. We love being part of celebrations in beautiful locations.',
     },
     {
-        question: 'How long will the mehendi stain last?',
-        answer: 'With proper aftercare, an organic henna stain lasts between 7 to 10 days, gradually fading as your skin naturally exfoliates. We provide detailed aftercare instructions to maximize your stain.',
+        question: 'Can I request a custom mehendi design for my wedding?',
+        answer: 'Absolutely! Custom designs are our specialty. We work closely with every bride to incorporate personal elements \u2014 initials, portraits, love stories, religious symbols, or specific motifs \u2014 into the mehendi. Share your ideas and inspiration, and we will create a one-of-a-kind design just for you.',
     },
 ];
 

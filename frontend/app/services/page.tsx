@@ -4,8 +4,8 @@ import ServicesClient from './ServicesClient';
 const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://gkmehendiart.com';
 
 export const metadata: Metadata = {
-    title: 'Mehendi Packages & Pricing in Chennai | GK Mehendi Art Services',
-    description: 'Explore GK Mehendi Art\'s bridal mehendi packages in Chennai from ₹300. Premium organic henna for weddings, sangeet, engagement & festivals. 10+ years of expertise, 2,000+ happy brides. Book your date today!',
+    title: 'Mehendi Services — Bridal, Wedding, Arabic & Custom Designs',
+    description: 'Explore GK Mehendi Art\'s bridal mehendi packages in Chennai from ₹300. Professional wedding henna, Arabic mehendi & custom designs with 100% organic henna. 10+ years expertise, 2,000+ brides. Book today!',
     keywords: [
         'bridal mehendi packages chennai',
         'mehendi price list chennai',
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     creator: 'GK Mehendi Art',
     publisher: 'GK Mehendi Art',
     openGraph: {
-        title: 'Mehendi Packages & Pricing Chennai | GK Mehendi Art',
-        description: 'Premium bridal mehendi packages from ₹300. Organic henna, intricate designs, professional service. Book your wedding mehendi in Chennai today!',
+        title: 'Mehendi Services — Bridal, Wedding, Arabic & Custom Designs | GK Mehendi Art',
+        description: 'Professional bridal mehendi packages from ₹300. Organic henna, intricate designs, wedding & Arabic mehendi. Book your mehendi artist in Chennai today!',
         url: `${siteUrl}/services`,
         siteName: 'GK Mehendi Art',
         locale: 'en_IN',

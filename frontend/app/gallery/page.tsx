@@ -15,52 +15,52 @@ const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://gkmehendiart.com';
 const legacyGalleryImages: Omit<GalleryImage, 'id'>[] = [
     {
         src: '/bridal-mehendi-masterpiece.webp',
-        alt: 'Bridal Mehendi Masterpiece',
+        alt: 'Intricate bridal mehendi design on full hands by GK Mehendi Art',
         caption: 'Full bridal coverage with traditional motifs',
     },
     {
         src: '/intricate-bridal-pattern.webp',
-        alt: 'Intricate Bridal Pattern',
+        alt: 'Detailed back-hand bridal henna design with paisley and floral motifs',
         caption: 'Detailed finger and wrist work',
     },
     {
         src: '/traditional-henna-art.webp',
-        alt: 'Traditional Henna Art',
+        alt: 'Traditional South Indian henna art with organic mehendi by GK Mehendi Art',
         caption: 'South Indian traditional patterns',
     },
     {
         src: '/elegant-arabic-design.webp',
-        alt: 'Elegant Arabic Design',
+        alt: 'Bold Arabic mehendi design with floral trail pattern on hand',
         caption: 'Modern Arabic florals with shading',
     },
     {
         src: '/arabic-geometric-pattern.webp',
-        alt: 'Arabic Geometric Pattern',
+        alt: 'Geometric Arabic mehendi pattern with negative space by professional henna artist',
         caption: 'Geometric Arabic with negative space',
     },
     {
         src: '/bridal-hand-adornment.webp',
-        alt: 'Bridal Hand Adornment',
+        alt: 'Beautiful bridal mehendi design covering full arm by GK Mehendi Art',
         caption: 'Elbow-length bridal coverage',
     },
     {
         src: '/traditional-rajasthani-motifs.webp',
-        alt: 'Traditional Rajasthani Motifs',
+        alt: 'Classic Rajasthani paisley mehendi design with traditional motifs',
         caption: 'Classic Rajasthani paisley patterns',
     },
     {
         src: '/function-occasion-mehendi.webp',
-        alt: 'Function Occasion Mehendi',
+        alt: 'Elegant engagement mehendi design for special occasions',
         caption: 'Elegant function-wear design',
     },
     {
         src: '/bridal-portfolio-piece.webp',
-        alt: 'Bridal Portfolio Piece',
+        alt: 'Close-up of intricate henna design details by professional mehendi artist',
         caption: 'Intricate palm and back hand design',
     },
     {
         src: '/occasion-henna-design.webp',
-        alt: 'Occasion Henna Design',
+        alt: 'Simple and stylish festival mehendi design by GK Mehendi Art',
         caption: 'Simple yet striking occasion mehendi',
     },
 ];
@@ -108,8 +108,8 @@ function getGalleryImages(): GalleryImage[] {
 const galleryImages = getGalleryImages();
 
 export const metadata: Metadata = {
-    title: 'Mehendi Design Gallery | Bridal, Arabic & Traditional Henna | GK Mehendi Art Chennai',
-    description: "Explore GK Mehendi Art's portfolio of bridal, Arabic, and traditional henna designs by Kalai in Chennai. Stunning organic mehendi work for weddings, receptions, and special occasions across Tamil Nadu.",
+    title: 'Mehendi Design Gallery — Our Best Henna Art & Bridal Work',
+    description: "Explore GK Mehendi Art's stunning portfolio of bridal, Arabic, and traditional henna designs by Kalai in Chennai. Organic mehendi work for weddings, receptions, and special occasions across India.",
     keywords: [
         'bridal mehendi gallery chennai',
         'henna design portfolio',
@@ -131,8 +131,8 @@ export const metadata: Metadata = {
     creator: 'GK Mehendi Art',
     publisher: 'GK Mehendi Art',
     openGraph: {
-        title: 'Mehendi Design Gallery | GK Mehendi Art Chennai',
-        description: 'Browse our stunning mehendi design portfolio. 2,000+ brides adorned. 100% organic mehendi by Kalai in Chennai.',
+        title: 'Mehendi Design Gallery — Our Best Henna Art & Bridal Work | GK Mehendi Art',
+        description: 'Browse our stunning mehendi design portfolio. 2,000+ brides adorned. 100% organic mehendi by Kalai in Chennai, India.',
         url: `${siteUrl}/gallery`,
         siteName: 'GK Mehendi Art',
         locale: 'en_IN',

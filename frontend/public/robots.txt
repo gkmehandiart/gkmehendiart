@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /api/
 
-Sitemap: https://gkmehendiart.com/sitemap.xml
+Sitemap: https://gkmehendiart.in/sitemap.xml

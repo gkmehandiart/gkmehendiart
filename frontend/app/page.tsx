@@ -14,38 +14,38 @@ import CTA from '@/components/CTA';
 const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://gkmehendiart.com';
 
 export const metadata: Metadata = {
-  title: 'GK Mehendi Art | Best Bridal Mehendi Artist in Chennai | Organic Henna',
+  title: 'GK Mehendi Art | Professional Bridal Mehendi Artist in Chennai, India',
   description:
-    "GK Mehendi Art — Chennai's #1 bridal mehendi artist. Over 10 years of experience, 2000+ brides adorned using 100% organic, chemical-free henna. Specialising in bridal, engagement, baby shower & festive mehendi designs across Chennai and Tamil Nadu. Book your appointment today.",
+    "GK Mehendi Art offers professional bridal mehendi, wedding henna & Arabic mehendi designs in Chennai, India. 10+ years experience, 2000+ brides adorned with 100% organic henna. Book the best mehendi artist for your special day!",
   keywords: [
+    'mehendi artist',
+    'bridal mehendi artist',
+    'professional mehendi artist',
+    'wedding mehendi artist',
+    'mehendi design services',
+    'best mehendi artist near me',
+    'bridal henna artist',
+    'mehendi for wedding',
+    'arabic mehendi artist',
+    'mehendi artist India',
     'bridal mehendi artist Chennai',
     'best mehendi artist Chennai',
     'organic henna Chennai',
     'wedding mehendi Chennai',
-    'bridal henna Tamil Nadu',
-    'chemical free mehendi Chennai',
-    'arabic mehendi Chennai',
-    'traditional mehendi designs',
-    'GK Mehendi Art',
-    'Kalai mehendi artist',
-    'engagement mehendi Chennai',
-    'baby shower mehendi',
+    'engagement mehendi artist',
+    'party mehendi services',
     'festival mehendi designs',
-    'mehendi booking Chennai',
-    'henna artist near me Chennai',
-    'mehendi for wedding Tamil Nadu',
-    'professional henna artist Chennai',
-    'organic henna designs',
-    'bridal henna artist near me',
-    'natural mehendi Chennai',
+    'traditional mehendi artist',
+    'custom mehendi designs',
+    'book mehendi artist online',
   ],
   alternates: {
     canonical: siteUrl,
   },
   openGraph: {
-    title: 'GK Mehendi Art | Best Bridal Mehendi Artist in Chennai',
+    title: 'GK Mehendi Art | Professional Bridal Mehendi Artist in Chennai, India',
     description:
-      "Chennai's #1 bridal mehendi artist — 10+ years experience, 2000+ brides adorned with 100% organic, chemical-free henna. Book your bridal, engagement or festive mehendi today!",
+      "Professional bridal mehendi, wedding henna & Arabic mehendi designs in Chennai, India. 10+ years experience, 2000+ brides. Book the best mehendi artist today!",
     type: 'website',
     url: siteUrl,
     siteName: 'GK Mehendi Art',
@@ -61,9 +61,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'GK Mehendi Art | Best Bridal Mehendi Artist in Chennai',
+    title: 'GK Mehendi Art | Professional Bridal Mehendi Artist in Chennai, India',
     description:
-      "Chennai's #1 bridal mehendi artist. 100% organic henna for weddings, engagements & celebrations. Book now!",
+      "Professional bridal mehendi artist in Chennai, India. 100% organic henna for weddings, engagements & celebrations. Book now!",
     images: [`${siteUrl}/opengraph-image`],
   },
   robots: {
@@ -85,42 +85,42 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Is your mehendi safe for sensitive skin?',
+      name: 'How far in advance should I book a bridal mehendi artist?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Absolutely! We use 100% organic henna made from premium Sojat leaves, mixed with essential oils like Eucalyptus and Tea Tree. No PPD, no chemicals, and no artificial colors — completely safe for all skin types.',
+        text: 'We recommend booking your bridal mehendi artist at least 2\u20134 weeks before your wedding date, especially during peak wedding season. Early booking ensures availability and gives us time to discuss your preferred designs and personalization. Contact GK Mehendi Art today to reserve your date.',
       },
     },
     {
       '@type': 'Question',
-      name: 'How long before my wedding should I get mehendi applied?',
+      name: 'What type of henna does GK Mehendi Art use?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'For the best stain result, we recommend applying mehendi 48 hours (2 days) before your main ceremony. This allows the stain to develop from orange to its deep mahogany peak, perfectly timed for your big day.',
+        text: 'We use 100% natural, chemical-free henna paste made from premium-quality henna powder. Our natural henna is safe for all skin types and produces a rich, deep maroon-to-brown stain that lasts 1\u20133 weeks depending on aftercare.',
       },
     },
     {
       '@type': 'Question',
-      name: 'How long does a bridal mehendi session take?',
+      name: 'How long does bridal mehendi take to apply?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Depending on the complexity and coverage (elbow vs. full arm), a bridal session typically takes between 4 to 7 hours. We recommend a comfortable seating arrangement and light snacks during this time.',
+        text: 'A full bridal mehendi session \u2014 covering both hands (front and back) and feet \u2014 typically takes 3\u20135 hours depending on the complexity and level of detail. We recommend scheduling your bridal mehendi the evening before or the morning of your wedding for the best colour results.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Do you travel to other cities for bookings?',
+      name: 'Do you travel for destination weddings and events outside your city?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'We primarily serve Chennai and surrounding areas. However, for exclusive bridal bookings, we do travel to other cities in Tamil Nadu. Travel and accommodation charges apply — please contact us to discuss.',
+        text: 'Yes! GK Mehendi Art is available for destination weddings and events across India. Travel arrangements and any additional charges will be discussed during the booking process. We love being part of celebrations in beautiful locations.',
       },
     },
     {
       '@type': 'Question',
-      name: 'How long will the mehendi stain last?',
+      name: 'Can I request a custom mehendi design for my wedding?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'With proper aftercare, an organic henna stain lasts between 7 to 10 days, gradually fading as your skin naturally exfoliates. We provide detailed aftercare instructions to maximize your stain.',
+        text: 'Absolutely! Custom designs are our specialty. We work closely with every bride to incorporate personal elements \u2014 initials, portraits, love stories, religious symbols, or specific motifs \u2014 into the mehendi. Share your ideas and inspiration, and we will create a one-of-a-kind design just for you.',
       },
     },
   ],
@@ -132,7 +132,7 @@ const websiteSchema = {
   name: 'GK Mehendi Art',
   url: siteUrl,
   description:
-    "Chennai's best bridal mehendi artist offering organic, chemical-free henna designs for weddings, engagements, and celebrations.",
+    "Professional bridal mehendi artist in Chennai offering stunning wedding henna, Arabic mehendi, and custom designs across India.",
   potentialAction: {
     '@type': 'SearchAction',
     target: {
@@ -170,7 +170,25 @@ const serviceSchema = {
           '@type': 'Service',
           name: 'Bridal Mehendi',
           description:
-            'Full bridal mehendi package including both hands up to elbow or full arm, with traditional and contemporary designs.',
+            'Full bridal mehendi package with elaborate, full-hand and full-feet designs featuring traditional motifs, personalized elements, and intricate detailing.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Wedding Mehendi',
+          description:
+            'Professional wedding mehendi services for the entire wedding party \u2014 from the bride\u2019s family to bridesmaids and guests at sangeet, haldi, and reception.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Arabic Mehendi',
+          description:
+            'Bold, flowing Arabic mehendi designs featuring striking floral trails, leaf motifs, and geometric patterns for engagements, receptions, and parties.',
         },
       },
       {
@@ -179,16 +197,25 @@ const serviceSchema = {
           '@type': 'Service',
           name: 'Engagement Mehendi',
           description:
-            'Elegant mehendi designs for engagement ceremonies, tailored to match the occasion.',
+            'Elegant mehendi designs for engagement ceremonies, tailored to match the occasion and your personal style.',
         },
       },
       {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
-          name: 'Festive & Event Mehendi',
+          name: 'Festival & Party Mehendi',
           description:
-            'Quick and beautiful mehendi designs for festivals, baby showers, corporate events, and parties.',
+            'Quick and beautiful mehendi designs for festivals, baby showers, corporate events, and celebrations.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Custom Mehendi Designs',
+          description:
+            'Personalized mehendi designs incorporating initials, portraits, love stories, and specific motifs \u2014 crafted uniquely for you.',
         },
       },
     ],

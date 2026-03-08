@@ -60,7 +60,13 @@ const Hero = () => {
                     >
                         <Image
                             src={HERO_IMAGES[currentImage]}
-                            alt={`GK Mehendi Art Design ${currentImage + 1}`}
+                            alt={[
+                                'Intricate bridal mehendi design on full hands by GK Mehendi Art',
+                                'Bold Arabic mehendi design with floral trail pattern',
+                                'Professional mehendi artist GK Mehendi Art creating bridal henna design',
+                                'Beautiful bridal mehendi design on feet with traditional motifs',
+                                'Detailed back-hand bridal henna design with paisley and floral motifs',
+                            ][currentImage]}
                             fill
                             className="object-cover"
                             priority={currentImage === 0}
@@ -109,7 +115,7 @@ const Hero = () => {
                         <StarRating rating={5} className="text-gold text-[10px]" />
                         <div className="w-px h-3 bg-gold/30" />
                         <span className="text-[11px] font-semibold tracking-[0.25em] text-gold uppercase font-body">
-                            Chennai&apos;s No. 1 Bridal Mehendi
+                            India&apos;s Trusted Bridal Mehendi Artist
                         </span>
                     </motion.div>
 
@@ -126,7 +132,7 @@ const Hero = () => {
                     <motion.h1
                         variants={{ hidden: { opacity: 0, y: 25 }, visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: 'easeOut' } } }}
                         className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-cream font-heading drop-shadow-2xl max-w-4xl"
-                        aria-label="Best Bridal Mehendi Artist in Chennai — Where Every Stroke Tells a Story"
+                        aria-label="Professional Bridal Mehendi Artist — Stunning Henna Designs for Your Special Day"
                     >
                         Where Every Stroke{' '}
                         <span className="relative inline-block">
@@ -164,7 +170,7 @@ const Hero = () => {
                         variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7 } } }}
                         className="text-base md:text-lg text-cream/70 max-w-xl font-body font-light leading-relaxed tracking-wide"
                     >
-                        Handcrafted bridal and ceremonial henna for your most cherished celebrations. Organic, traditional, and timeless.
+                        From intricate bridal patterns to elegant Arabic designs, GK Mehendi Art brings beauty, tradition, and artistry to every celebration across India.
                     </motion.p>
 
                     {/* CTA Buttons */}

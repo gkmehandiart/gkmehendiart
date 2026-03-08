@@ -14,7 +14,7 @@ const services = [
         tag: 'Bridal',
         title: 'Bridal Mehendi',
         price: 'From ₹2,500',
-        description: 'Beautiful basic floral bridal henna for your special day. Travel charges extra. Price varies with design.',
+        description: 'Elaborate, full-hand and full-feet bridal mehendi with traditional motifs, personalized elements, and premium natural henna for deep, long-lasting colour.',
     },
     {
         id: 2,
@@ -22,7 +22,7 @@ const services = [
         tag: 'Feet',
         title: 'Feet Mehendi',
         price: 'From ₹1,000',
-        description: 'Elegant mandala pattern feet mehendi (ankle length). Perfect for brides and special occasions.',
+        description: 'Elegant mandala pattern feet mehendi with ankle-length coverage. Perfect for brides and special wedding occasions.',
     },
     {
         id: 3,
@@ -30,7 +30,7 @@ const services = [
         tag: 'Guest · Arabic',
         title: 'Arabic Mehendi',
         price: '₹100 (two hands)',
-        description: 'Arabic palm-length design for two hands (front side). Quick and beautiful for guests at functions.',
+        description: 'Bold, flowing Arabic mehendi with striking floral trails and geometric patterns. Modern yet timeless look for engagements and parties.',
     },
     {
         id: 4,
@@ -38,7 +38,7 @@ const services = [
         tag: 'Guest · Mandala',
         title: 'Mandala Design',
         price: '₹300 (two hands)',
-        description: 'Mandala design for two hands (front side). Price increases with length and design complexity.',
+        description: 'Intricate mandala mehendi designs for two hands. Customizable complexity and coverage to suit any celebration or festival.',
     },
 ];
 
@@ -80,7 +80,7 @@ const ServicesPreview: React.FC = () => {
                         transition={{ delay: 0.1 }}
                         className="text-dark/50 font-body text-base leading-relaxed"
                     >
-                        From intimate ceremonies to grand bridal occasions — every design is handcrafted with organic henna and meticulous care.
+                        From intimate ceremonies to grand bridal occasions — every design is handcrafted with organic henna and meticulous care. Bridal, wedding, Arabic, engagement, festival, and custom mehendi services available.
                     </motion.p>
                 </div>
 

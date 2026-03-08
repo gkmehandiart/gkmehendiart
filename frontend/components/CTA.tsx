@@ -48,9 +48,9 @@ const CTA: React.FC = () => {
                         transition={{ duration: 0.7, delay: 0.1 }}
                         className="text-4xl md:text-6xl font-heading font-bold text-white leading-[1.1] mb-6 max-w-3xl"
                     >
-                        Reserve Your Date Before{' '}
+                        Book Your Mehendi Artist Today{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-[#E8B820]">
-                            It&apos;s Gone
+                            Before It&apos;s Gone
                         </span>
                     </motion.h2>
 
@@ -61,7 +61,7 @@ const CTA: React.FC = () => {
                         transition={{ delay: 0.2 }}
                         className="text-cream/55 font-body text-base md:text-lg leading-relaxed max-w-2xl mb-12"
                     >
-                        Bridal slots for the wedding season fill up fast. Book now to secure your preferred date and let us adorn your hands with a design that tells your unique story.
+                        Bridal slots for the wedding season fill up fast. Book your mehendi artist today and let us make your celebration unforgettable with stunning henna designs.
                     </motion.p>
 
                     {/* CTA Buttons */}

@@ -1,122 +1,66 @@
 # Deployment Guide - GK Mehendi Art Booking Platform
 
-This guide reflects the current implementation:
-- Frontend: Next.js app
-- Backend: Express API
-- Data/Auth: Supabase (Postgres + Auth)
+This guide reflects the current static web implementation:
+- **Frontend Framework**: Next.js 16 (App Router)
+- **Deployment Platform**: Vercel
+- **Domain Mapping**: `gkmehendiart.in`
 
-## Recommended Stack
+## Overview
 
-- Frontend: Vercel
-- Backend: Railway or Render
-- Database/Auth: Supabase
+Unlike legacy implementations requiring a fully qualified backend environment, this iteration of GK Mehendi Art utilizes a highly scalable static architecture targeting Vercel deployments. It offloads standard administrative constraints by adopting a direct WhatsApp booking workflow instead.
 
-## Deployment Architecture
+## 1. Prepare Environment Variables
 
-- Browser -> Frontend (Vercel)
-- Frontend -> Backend API (`NEXT_PUBLIC_API_URL`)
-- Frontend admin login -> Supabase Auth (anon key)
-- Backend -> Supabase Postgres/Auth using service role key
+You need to establish your Vercel instance variables prior to deploying the final codebase. 
 
-## 1. Prepare Supabase (Production)
-
-1. Create production Supabase project.
-2. Run `backend/database/schema.sql` in SQL Editor.
-3. Create admin Auth user in Supabase Authentication -> Users.
-4. Insert matching row in `public.users`:
-
-```sql
-insert into public.users (username, email, password_hash, role)
-values ('admin', 'admin@gkmehendi.com', 'managed-by-supabase-auth', 'admin')
-on conflict (email) do update set role = excluded.role;
-```
-
-## 2. Deploy Backend
-
-Deploy `backend` folder to Railway/Render.
-
-Required backend environment variables:
+Navigate to your Vercel Project Settings > Environment Variables:
 
 ```env
-NODE_ENV=production
-PORT=5000
-SUPABASE_URL=https://your-project-ref.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
-FRONTEND_URL=https://your-domain.com,https://www.your-domain.com
-WHATSAPP_PHONE=+919876543210
-RATE_LIMIT_WINDOW_MS=900000
-RATE_LIMIT_MAX_REQUESTS=100
-MAX_ADVANCE_BOOKING_DAYS=90
-MIN_ADVANCE_HOURS=3
-MIN_BRIDAL_ADVANCE_DAYS=2
-BUFFER_MINUTES_BETWEEN_SLOTS=30
+NEXT_PUBLIC_WHATSAPP_PHONE=916383927576
+NEXT_PUBLIC_APP_URL=https://gkmehendiart.in
 ```
 
-Backend validation:
-- `GET https://api.your-domain.com/api/health` should return `success: true`.
+*Make sure `NEXT_PUBLIC_APP_URL` uses the exact domain users will be accessing (e.g., `.in` over `.com` to properly match generated XML sitemap and API limits)*.
 
-## 3. Deploy Frontend
+## 2. Deploy Next.js Frontend (Vercel)
 
-Deploy `frontend` folder to Vercel.
-
-Required frontend environment variables:
-
-```env
-NEXT_PUBLIC_API_URL=https://api.your-domain.com
-NEXT_PUBLIC_SUPABASE_URL=https://your-project-ref.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-NEXT_PUBLIC_WHATSAPP_PHONE=+919876543210
-NEXT_PUBLIC_APP_NAME=GK Mehendi Art
-NEXT_PUBLIC_APP_URL=https://your-domain.com
-```
-
-## 4. DNS and CORS
-
-- Point frontend domain to Vercel.
-- Point API subdomain (example `api.your-domain.com`) to backend host.
-- Ensure backend `FRONTEND_URL` includes every frontend origin that should access the API.
-
-## 5. Post-Deploy Validation
-
-Customer:
-- Homepage loads
-- Booking flow works end-to-end
-- Booking status lookup works
-
-Admin:
-- `/admin` login with Supabase Auth user
-- Dashboard data loads
-- Status updates, blocked dates, settings updates work
-
-API:
-- Health endpoint responds
-- CORS allows only configured frontend origins
-
-## 6. Security Checklist
-
-- Never expose `SUPABASE_SERVICE_ROLE_KEY` to frontend
-- Use separate Supabase projects for staging and production
-- Restrict `FRONTEND_URL` to trusted domains only
-- Rotate keys if compromised
-- Keep dependencies updated and monitor logs
-
-## 7. Known Deployment Caveats
-
-- Current backend package references `scripts/createAdmin.js`, but file is missing. Admin must be provisioned through Supabase dashboard + SQL as shown above.
-- Existing frontend lint issues should be resolved before enforcing strict CI quality gates.
-- Automated tests are not yet configured in backend/frontend.
-
-## Useful Commands
-
+### Option 1: Vercel CLI (For CI/CD or Terminal Setup)
 ```bash
-# backend
-cd backend
-npm install
-npm start
-
-# frontend
+npm i -g vercel
 cd frontend
-npm install
-npm run build
-npm start
+vercel
+vercel --prod
 ```
+
+### Option 2: Automatic GitHub Deployment (Preferred)
+1. Commit the `frontend` folder into your GitHub repository securely.
+2. Link the repository to your Vercel account.
+3. Keep the Root Directory config to `frontend` so Vercel can find the Next.js `package.json`.
+4. Deploy on each commit made on the master/main branch automatically.
+
+## 3. DNS Configuration
+
+Your Vercel deployment will offer you a default `.vercel.app` domain. You must configure your production DNS settings to route `gkmehendiart.in` traffic directly into Vercel's endpoints. 
+
+Update your Domain Registrar (e.g. GoDaddy/Namecheap):
+1. Create an `A Record` for `@` pointing to Vercel's Anycast IP (`76.76.21.21`).
+2. Create a `CNAME Record` for `www` pointing to `cname.vercel-dns.com.`.
+
+Vercel will manage SSL encryptions internally. Wait up to 48 hours for TTL DNS propagation if you are migrating domains. 
+
+## 4. Post-Deploy Validation
+
+Customer validations when the website is live over the network:
+- [ ] Homepage loads properly with `<title>` referencing the new SEO schemas.
+- [ ] The Hero carousels execute Framer Motion animations without latency.
+- [ ] Clicking to "Book Service" correctly triggers a `https://wa.me/` referral link matching `NEXT_PUBLIC_WHATSAPP_PHONE`.
+- [ ] Direct SEO paths `gkmehendiart.in/sitemap.xml` and `gkmehendiart.in/robots.txt` show matching properties with `gkmehendiart.in`.
+- [ ] Google PageSpeed insights are solid.
+
+## 5. Analytics (Optional)
+
+Include a `<Script>` tag appending tracking properties within `./frontend/app/layout.tsx` for deeper visitor diagnostics, or utilize Vercel Web Analytics through your Vercel project's settings tab.
+
+## Summary 
+
+All prior infrastructure files such as `backend/` have been unlinked. To restore any Express API flows, revert the code history from git and utilize Railway hosting pipelines as outlined in previously saved documentation models.

@@ -4,8 +4,8 @@ import AboutClient from './AboutClient';
 const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://gkmehendiart.com';
 
 export const metadata: Metadata = {
-    title: 'About Kalai | Best Bridal Mehendi Artist in Chennai | GK Mehendi Art',
-    description: "Meet Kalai — Chennai's most trusted bridal mehendi artist with 10+ years of experience and 2,000+ brides adorned. Expert in traditional, Arabic & contemporary henna using 100% organic, chemical-free ingredients. Serving weddings across Tamil Nadu.",
+    title: 'About GK Mehendi Art — Trusted Professional Henna Artist in Chennai',
+    description: "Meet Kalai — Chennai's most trusted professional bridal mehendi artist with 10+ years of experience and 2,000+ brides adorned. Expert in traditional, Arabic & custom henna designs using 100% organic ingredients. Available across India.",
     keywords: [
         'best bridal mehendi artist chennai',
         'kalai gk mehendi art',
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     creator: 'GK Mehendi Art',
     publisher: 'GK Mehendi Art',
     openGraph: {
-        title: 'About Kalai | Best Bridal Mehendi Artist in Chennai | GK Mehendi Art',
-        description: "Discover the story of Kalai — Chennai's most trusted bridal mehendi artist. 10+ years experience, 2,000+ happy brides, 100% organic henna. Book your appointment today.",
+        title: 'About GK Mehendi Art — Trusted Professional Henna Artist in Chennai',
+        description: "Discover the story of Kalai — Chennai's most trusted professional mehendi artist. 10+ years experience, 2,000+ happy brides, 100% organic henna. Book your appointment today.",
         url: `${siteUrl}/about`,
         siteName: 'GK Mehendi Art',
         locale: 'en_IN',

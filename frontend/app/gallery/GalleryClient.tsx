@@ -222,17 +222,7 @@ export default function GalleryClient({ images }: GalleryClientProps) {
                                     <FiMaximize2 size={13} />
                                 </div>
 
-                                <figcaption className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-[400ms] flex flex-col justify-end p-6">
-                                    <div className="transform translate-y-3 group-hover:translate-y-0 transition-transform duration-500">
-                                        <p className="text-white font-heading font-bold text-lg leading-snug mb-1">
-                                            {image.alt}
-                                        </p>
-                                        <p className="text-cream/60 font-body text-xs">
-                                            {image.caption}
-                                        </p>
-                                        <div className="w-8 h-px bg-gold mt-3" />
-                                    </div>
-                                </figcaption>
+
                             </motion.figure>
                         ))}
                     </motion.div>
@@ -374,10 +364,7 @@ export default function GalleryClient({ images }: GalleryClientProps) {
                                 />
                             </div>
 
-                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6">
-                                <p className="text-white font-heading font-bold text-lg leading-snug">{lightboxImage.alt}</p>
-                                <p className="text-cream/75 font-body text-xs mt-1">{lightboxImage.caption}</p>
-                            </div>
+
 
                             <button
                                 onClick={closeLightbox}
