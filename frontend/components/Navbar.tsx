@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
     return (
         <>
             {/* Top Announcement Bar */}
-            <div className="fixed top-0 left-0 right-0 z-[60] bg-[#1A0F0A] border-b border-gold/20 py-2 px-6 text-center">
+            <div className="hidden md:block fixed top-0 left-0 right-0 z-[60] bg-[#1A0F0A] border-b border-gold/20 py-2 px-6 text-center">
                 <div className="flex items-center justify-center gap-3">
                     <span className="w-1 h-1 rounded-full bg-gold animate-pulse" />
                     <p className="text-[11px] tracking-[0.2em] uppercase text-cream-soft/70 font-body">
@@ -57,9 +57,9 @@ const Navbar: React.FC = () => {
 
             {/* Main Navbar */}
             <nav
-                className={`fixed top-[33px] left-0 right-0 z-50 transition-all duration-500 ${isTransparent
-                        ? 'bg-transparent py-5'
-                        : 'bg-[#100806]/95 backdrop-blur-xl shadow-2xl shadow-black/40 border-b border-gold/15 py-3.5'
+                className={`fixed top-0 md:top-[33px] left-0 right-0 z-50 transition-all duration-500 ${isTransparent
+                    ? 'bg-transparent py-5'
+                    : 'bg-[#100806]/95 backdrop-blur-xl shadow-2xl shadow-black/40 border-b border-gold/15 py-3.5'
                     }`}
             >
                 {/* Scroll Progress Line */}
@@ -157,7 +157,7 @@ const Navbar: React.FC = () => {
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.25, ease: 'easeOut' }}
                         id="mobile-menu"
-                        className="fixed top-[33px] left-0 right-0 bottom-0 z-40 bg-[#100806]/98 backdrop-blur-2xl flex flex-col md:hidden"
+                        className="fixed top-0 left-0 right-0 bottom-0 z-40 bg-[#100806]/98 backdrop-blur-2xl flex flex-col md:hidden"
                         style={{ paddingTop: '72px' }}
                     >
                         {/* Decorative top border */}
@@ -176,8 +176,8 @@ const Navbar: React.FC = () => {
                                         href={link.path}
                                         onClick={() => setIsMobileMenuOpen(false)}
                                         className={`block py-4 text-2xl font-heading font-medium tracking-wider transition-colors ${pathname === link.path
-                                                ? 'text-gold'
-                                                : 'text-cream/80 hover:text-cream'
+                                            ? 'text-gold'
+                                            : 'text-cream/80 hover:text-cream'
                                             }`}
                                     >
                                         {link.label}

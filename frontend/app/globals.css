@@ -47,6 +47,12 @@
   scroll-behavior: smooth;
 }
 
+@media (max-width: 768px) {
+  :root {
+    --nav-total-height: 56px;
+  }
+}
+
 /* Prevent horizontal overflow on all pages */
 html,
 body {
@@ -107,6 +113,7 @@ button {
 
 /* Respect reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
