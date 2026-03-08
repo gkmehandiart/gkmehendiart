@@ -110,11 +110,11 @@ const Hero = () => {
                     {/* Trust Badge */}
                     <motion.div
                         variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7 } } }}
-                        className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-gold/30 bg-[#1A0F0A]/60 backdrop-blur-sm"
+                        className="inline-flex flex-col sm:flex-row items-center gap-1.5 sm:gap-3 px-5 sm:px-5 py-2.5 sm:py-2 rounded-2xl sm:rounded-full border border-gold/30 bg-[#1A0F0A]/60 backdrop-blur-sm"
                     >
-                        <StarRating rating={5} className="text-gold text-[10px]" />
-                        <div className="w-px h-3 bg-gold/30" />
-                        <span className="text-[11px] font-semibold tracking-[0.25em] text-gold uppercase font-body">
+                        <StarRating rating={5} className="text-gold text-[12px] sm:text-[10px]" />
+                        <div className="hidden sm:block w-px h-3 bg-gold/30" />
+                        <span className="text-[9.5px] sm:text-[11px] font-semibold tracking-widest sm:tracking-[0.25em] text-gold uppercase font-body text-center max-w-[240px] sm:max-w-none leading-snug mt-0.5 sm:mt-0">
                             India&apos;s Trusted Bridal Mehendi Artist
                         </span>
                     </motion.div>
