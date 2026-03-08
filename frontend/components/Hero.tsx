@@ -44,7 +44,7 @@ const Hero = () => {
     return (
         <section
             id="home"
-            className="relative w-full h-screen min-h-[700px] overflow-hidden flex flex-col items-center justify-center"
+            className="relative w-full h-[100dvh] min-h-[780px] md:min-h-[700px] overflow-hidden flex flex-col items-center justify-center pb-[160px] md:pb-24"
             style={{ paddingTop: 'var(--nav-total-height, 89px)' }}
         >
             {/* Background Slideshow */}
@@ -82,7 +82,7 @@ const Hero = () => {
             </div>
 
             {/* Slide Indicators — positioned above the stats bar with safe clearance */}
-            <div className="absolute bottom-24 sm:bottom-28 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+            <div className="absolute bottom-[160px] md:bottom-28 left-1/2 -translate-x-1/2 z-20 flex gap-2">
                 {HERO_IMAGES.map((_: string, i: number) => (
                     <button
                         key={i}
@@ -105,7 +105,7 @@ const Hero = () => {
                         hidden: {},
                         visible: { transition: { staggerChildren: 0.18 } },
                     }}
-                    className="flex flex-col items-center gap-5 md:gap-7"
+                    className="flex flex-col items-center gap-4 md:gap-7"
                 >
                     {/* Trust Badge */}
                     <motion.div
