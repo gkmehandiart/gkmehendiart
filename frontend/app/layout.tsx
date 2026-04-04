@@ -5,6 +5,7 @@ import { Great_Vibes, Playfair_Display, Montserrat } from 'next/font/google';
 import './globals.css';
 import LayoutShell from '@/components/LayoutShell';
 import MotionProvider from '@/components/MotionProvider';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 // Main Headings - Decorative Script Font
 const greatVibes = Great_Vibes({
@@ -200,6 +201,7 @@ export default function RootLayout({
             {children}
           </LayoutShell>
         </MotionProvider>
+        <SpeedInsights />
       </body>
     </html>
   );

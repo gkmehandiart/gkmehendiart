@@ -1,0 +1,45 @@
+## Vercel Speed Insights Installation
+
+Successfully installed and configured Vercel Speed Insights for the Next.js project following the official documentation from https://vercel.com/docs/speed-insights/quickstart.
+
+### Changes Made:
+
+**1. Package Installation:**
+- Installed `@vercel/speed-insights` v2.0.0 using npm
+- Updated `package.json` with the new dependency
+- Updated `package-lock.json` with resolved dependencies
+
+**2. Code Integration:**
+- Modified `app/layout.tsx` to add the SpeedInsights component
+- Added import statement: `import { SpeedInsights } from '@vercel/speed-insights/next'`
+- Added `<SpeedInsights />` component inside the `<body>` tag, after the MotionProvider wrapper
+- Placement follows Next.js App Router best practices (v16.1.6)
+
+### Files Modified:
+- `app/layout.tsx` - Added SpeedInsights import and component
+- `package.json` - Added @vercel/speed-insights dependency
+- `package-lock.json` - Updated with new package dependencies
+
+### Implementation Details:
+- Used the framework-specific Next.js import path (`@vercel/speed-insights/next`)
+- Component is placed at the end of the body to avoid interfering with existing layout structure
+- No environment variables or additional configuration required
+- The component is automatically enabled and will collect performance metrics when deployed to Vercel
+
+### Verification:
+✅ Build completed successfully with no errors
+✅ Linter passed with no issues
+✅ TypeScript compilation successful
+✅ All static pages generated correctly (12/12 pages)
+
+### Next Steps for Deployment:
+1. Push the changes to the repository
+2. Deploy to Vercel (automatic deployment via Git connection)
+3. Enable Speed Insights in the Vercel dashboard under the project's Speed Insights section
+4. Performance metrics will begin collecting automatically after deployment
+
+### Notes:
+- Speed Insights works seamlessly with the existing project structure
+- No conflicts with existing dependencies (framer-motion, next, react, etc.)
+- The component is lightweight and won't impact page load performance
+- Data collection is automatic and requires no additional setup after deployment
