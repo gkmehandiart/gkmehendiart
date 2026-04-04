@@ -4,6 +4,7 @@ import type { Metadata, Viewport } from 'next';
 import { Great_Vibes, Playfair_Display, Montserrat } from 'next/font/google';
 import './globals.css';
 import LayoutShell from '@/components/LayoutShell';
+import MotionProvider from '@/components/MotionProvider';
 
 // Main Headings - Decorative Script Font
 const greatVibes = Great_Vibes({
@@ -194,9 +195,11 @@ export default function RootLayout({
             }),
           }}
         />
-        <LayoutShell>
-          {children}
-        </LayoutShell>
+        <MotionProvider>
+          <LayoutShell>
+            {children}
+          </LayoutShell>
+        </MotionProvider>
       </body>
     </html>
   );

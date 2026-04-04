@@ -1,15 +1,16 @@
-
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import Hero from '@/components/Hero';
-import AboutPreview from '@/components/AboutPreview';
-import ServicesPreview from '@/components/ServicesPreview';
-import WhyChooseUs from '@/components/WhyChooseUs';
-import Process from '@/components/Process';
-import GalleryPreview from '@/components/GalleryPreview';
-import InstagramFeed from '@/components/InstagramFeed';
-import Testimonials from '@/components/Testimonials';
-import FAQ from '@/components/FAQ';
-import CTA from '@/components/CTA';
+
+const AboutPreview = dynamic(() => import('@/components/AboutPreview'));
+const ServicesPreview = dynamic(() => import('@/components/ServicesPreview'));
+const WhyChooseUs = dynamic(() => import('@/components/WhyChooseUs'));
+const Process = dynamic(() => import('@/components/Process'));
+const GalleryPreview = dynamic(() => import('@/components/GalleryPreview'));
+const InstagramFeed = dynamic(() => import('@/components/InstagramFeed'));
+const Testimonials = dynamic(() => import('@/components/Testimonials'));
+const FAQ = dynamic(() => import('@/components/FAQ'));
+const CTA = dynamic(() => import('@/components/CTA'));
 
 const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://gkmehendiart.com';
 

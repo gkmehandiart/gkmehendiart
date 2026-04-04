@@ -191,19 +191,11 @@ export default function GalleryClient({ images }: GalleryClientProps) {
                         </span>
                     </motion.div>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 12 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.35, ease: 'easeOut' as const }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-                    >
-                        {images.map((image, index) => (
-                            <motion.figure
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {images.map((image) => (
+                            <figure
                                 key={image.id}
-                                initial={{ opacity: 0, y: 24 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.45, delay: index * 0.03, ease: 'easeOut' as const }}
-                                className="relative group overflow-hidden rounded-2xl shadow-md border border-gold/10 cursor-pointer aspect-[4/5] m-0 bg-white"
+                                className="relative group overflow-hidden rounded-2xl shadow-md border border-gold/10 cursor-pointer aspect-[4/5] m-0 bg-white [content-visibility:auto] [contain-intrinsic-size:400px_500px]"
                                 onClick={() => openLightbox(image)}
                                 role="button"
                                 tabIndex={0}
@@ -216,16 +208,15 @@ export default function GalleryClient({ images }: GalleryClientProps) {
                                     fill
                                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                    loading="lazy"
                                 />
 
                                 <div className="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:bg-gold/25">
                                     <FiMaximize2 size={13} />
                                 </div>
-
-
-                            </motion.figure>
+                            </figure>
                         ))}
-                    </motion.div>
+                    </div>
 
                     {images.length === 0 && (
                         <p className="text-center text-dark/45 font-body text-sm mt-10">

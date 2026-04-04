@@ -1,7 +1,7 @@
 
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX, FiPhone } from 'react-icons/fi';
 import Link from 'next/link';
@@ -12,23 +12,32 @@ import { navLinks } from '@/lib/navigation';
 const Navbar: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [scrollProgress, setScrollProgress] = useState(0);
     const pathname = usePathname();
+    const progressRef = useRef<HTMLDivElement>(null);
+    const isScrolledRef = useRef(false);
 
     useEffect(() => {
         let ticking = false;
+        const applyScroll = () => {
+            const scrollY = window.scrollY;
+            const nextScrolled = scrollY > 60;
+            if (nextScrolled !== isScrolledRef.current) {
+                isScrolledRef.current = nextScrolled;
+                setIsScrolled(nextScrolled);
+            }
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const pct = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+            const bar = progressRef.current;
+            if (bar) bar.style.width = `${pct}%`;
+            ticking = false;
+        };
         const handleScroll = () => {
             if (!ticking) {
-                requestAnimationFrame(() => {
-                    const scrollY = window.scrollY;
-                    setIsScrolled(scrollY > 60);
-                    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                    setScrollProgress(docHeight > 0 ? (scrollY / docHeight) * 100 : 0);
-                    ticking = false;
-                });
                 ticking = true;
+                requestAnimationFrame(applyScroll);
             }
         };
+        applyScroll();
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -62,10 +71,11 @@ const Navbar: React.FC = () => {
                     : 'bg-[#100806]/95 backdrop-blur-xl shadow-2xl shadow-black/40 border-b border-gold/15 py-3.5'
                     }`}
             >
-                {/* Scroll Progress Line */}
+                {/* Scroll progress: DOM width only — avoids React re-renders every frame */}
                 <div
-                    className="absolute bottom-0 left-0 h-[1.5px] bg-gradient-to-r from-gold/0 via-gold to-gold/0 transition-all duration-150"
-                    style={{ width: `${scrollProgress}%` }}
+                    ref={progressRef}
+                    className="absolute bottom-0 left-0 h-[1.5px] bg-gradient-to-r from-gold/0 via-gold to-gold/0 transition-[width] duration-150"
+                    style={{ width: '0%' }}
                 />
 
                 <div className="container mx-auto px-6 flex justify-between items-center max-w-7xl">

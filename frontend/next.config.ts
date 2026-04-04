@@ -5,6 +5,10 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,   // Remove X-Powered-By: Next.js header
   compress: true,           // Enable gzip/brotli compression
 
+  experimental: {
+    optimizePackageImports: ['react-icons', 'framer-motion'],
+  },
+
   images: {
     remotePatterns: [
       {
